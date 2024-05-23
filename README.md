@@ -42,4 +42,6 @@ Voy a crear un proyecto con angular 16
     8.1 Vamos a Angular material a componentes y buscamos dialog
     8.2 Vamos a Angular material y buscamos select
     8.3 Vamos a Angular material y buscamos datepicker y me dara un error en consola porque tambien hay que importar este archivo import { MatNativeDateModule } from '@angular/material/core';
+9. Modal Persona - Configuración Reactive Forms
+    9.1 vamos al shared y importamos ReactiveFormsModule
     
