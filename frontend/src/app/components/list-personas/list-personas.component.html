@@ -8,7 +8,7 @@
   <mat-label>Filtro</mat-label>
   <input matInput (keyup)="applyFilter($event)"  #input autocomplete="off">
 </mat-form-field>
-<button  mat-raised-button color="primary">Agregar</button>
+<button (click)="addEditPersona()" mat-raised-button color="primary">Agregar</button>
 
 <!--Si queremos bajar la sombra con cambiar z8 por otro numero nos serviria-->
   <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">

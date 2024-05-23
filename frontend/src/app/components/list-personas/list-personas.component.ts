@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Persona } from 'src/app/interfaces/persona';
+import { AgregarEditarPersonaComponent } from '../agregar-editar-persona/agregar-editar-persona.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 const listPersonas: Persona[] = [
@@ -68,12 +70,12 @@ export class ListPersonasComponent implements OnInit, AfterViewInit {
     'tipoDocumento',
     'documento',
     'fechaNacimiento',
-    'acciones'
+    'acciones',
   ];
   dataSource: MatTableDataSource<Persona>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor() {
+  constructor(public dialog: MatDialog) {
     //this.dataSource = new MatTableDataSource(listPersonas);
     this.dataSource = new MatTableDataSource();
   }
@@ -93,5 +95,15 @@ export class ListPersonasComponent implements OnInit, AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  addEditPersona() {
+    const dialogRef = this.dialog.open(AgregarEditarPersonaComponent, {
+      width: '550px',
+      //Por si en el modal pincho fuera se me cierre
+      disableClose: true,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
 }

@@ -38,3 +38,8 @@ Voy a crear un proyecto con angular 16
     7.2 Vamos a Angular material y buscamos tooltip
     7.3 Vamos a Angular material y buscamos button
     7.4 Creamos un nuevo modulo dentro de la carpeta shared donde pasaremos todos los material angular de app.module.ts que lo podemos hacer asi ng g m shared
+8. Modal Agregar persona HTML
+    8.1 Vamos a Angular material a componentes y buscamos dialog
+    8.2 Vamos a Angular material y buscamos select
+    8.3 Vamos a Angular material y buscamos datepicker y me dara un error en consola porque tambien hay que importar este archivo import { MatNativeDateModule } from '@angular/material/core';
+    
