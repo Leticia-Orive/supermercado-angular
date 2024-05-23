@@ -22,3 +22,7 @@ Voy a crear un proyecto con angular 16
             2.En esta respuesta podemos elegir la que queramos ya que es la paleta de colores de angular
             3.yes
             4. Pinchamos en la primera ya que si queremos las animaciones
+4. Configuración tabla 
+    4.1 en el html app pongo esto para que cargue esa pagina <app-list-personas></app-list-personas>
+    4.2 Empezamos a añadir angular Material
+    4.3 Vamos a esta pagina de google https://angular.io/api/common/DatePipe para ver como colocamos la fecha.
