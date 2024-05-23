@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Persona } from 'src/app/interfaces/persona';
 
@@ -11,19 +11,25 @@ import { Persona } from 'src/app/interfaces/persona';
 export class AgregarEditarPersonaComponent implements OnInit {
   tipoDocumento: string[] = ['DNI', 'Libreta Civica', 'Pasaporte'];
   form: FormGroup;
+  maxDate: Date;
 
   constructor(
     public dialogRef: MatDialogRef<AgregarEditarPersonaComponent>,
     private fb: FormBuilder
   ) {
-    this.form = this.fb.group({
-      nombre: [''],
-      apellido: [''],
-      correo: [''],
-      tipoDocumento: [null],
-      documento: [null],
-      fechaNacimiento: [null],
-    });
+    (this.maxDate = new Date()),
+      (this.form = this.fb.group({
+        /**Si se utilizan mas de una validacion hay que meterlas en un array como muestro debajo */
+        nombre: ['', [Validators.required, Validators.maxLength(20)]],
+        apellido: ['', Validators.required],
+        correo: ['', , [Validators.required, Validators.email]],
+        tipoDocumento: [null, Validators.required],
+        documento: [
+          null,
+          [Validators.required, Validators.pattern('^[0-9]*$')],
+        ],
+        fechaNacimiento: [null, Validators.required],
+      }));
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -36,6 +42,10 @@ export class AgregarEditarPersonaComponent implements OnInit {
      * const nombre = this.form.get('nombre')?.value;
      * console.log(this.form);
     const nombre = this.form.value.nombre;*/
+    /**Si no quiero deshabilitar el boton puedo hacer esto*/
+    if (this.form.invalid) {
+      return;
+    }
     const persona: Persona = {
       nombre: this.form.value.nombre,
       apellido: this.form.value.apellido,
@@ -44,6 +54,6 @@ export class AgregarEditarPersonaComponent implements OnInit {
       documento: this.form.value.documento,
       fechaNacimiento: this.form.value.fechaNacimiento,
     };
-    console.log(persona);
+    console.log(this.form);
   }
 }
