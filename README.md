@@ -28,3 +28,7 @@ Voy a crear un proyecto con angular 16
     4.3 Vamos a esta pagina de google https://angular.io/api/common/DatePipe para ver como colocamos la fecha.
 5. Paginación
     5.1 Vamos a Angular material y buscamos paginación
+6. Ordenamiento y filtro
+    6.1 Vamos a Angular material y buscamos sort-header
+    6.2 Vamos a Angular material a componentes y buscamos form-field
+    6.3 Vamos a Angular material y buscamos input
