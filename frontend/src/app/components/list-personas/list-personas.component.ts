@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Persona } from 'src/app/interfaces/persona';
 
 
@@ -57,7 +60,7 @@ const listPersonas: Persona[] = [
   templateUrl: './list-personas.component.html',
   styleUrls: ['./list-personas.component.css'],
 })
-export class ListPersonasComponent implements OnInit {
+export class ListPersonasComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = [
     'nombre',
     'apellido',
@@ -66,9 +69,19 @@ export class ListPersonasComponent implements OnInit {
     'documento',
     'fechaNacimiento',
   ];
-  dataSource = listPersonas;
-  constructor() {}
+  dataSource: MatTableDataSource<Persona>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  constructor() {
+    this.dataSource = new MatTableDataSource();
+  }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
+  }
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    /*Para cambiar el nombre
+    this.dataSource.paginator._intl.itemsPerPageLabel = "Items por pagina"*/
   }
 }

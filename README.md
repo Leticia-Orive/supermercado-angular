@@ -26,3 +26,5 @@ Voy a crear un proyecto con angular 16
     4.1 en el html app pongo esto para que cargue esa pagina <app-list-personas></app-list-personas>
     4.2 Empezamos a añadir angular Material
     4.3 Vamos a esta pagina de google https://angular.io/api/common/DatePipe para ver como colocamos la fecha.
+5. Paginación
+    5.1 Vamos a Angular material y buscamos paginación
