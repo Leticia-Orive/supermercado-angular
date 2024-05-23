@@ -68,11 +68,13 @@ export class ListPersonasComponent implements OnInit, AfterViewInit {
     'tipoDocumento',
     'documento',
     'fechaNacimiento',
+    'acciones'
   ];
   dataSource: MatTableDataSource<Persona>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor() {
+    //this.dataSource = new MatTableDataSource(listPersonas);
     this.dataSource = new MatTableDataSource();
   }
   ngOnInit(): void {

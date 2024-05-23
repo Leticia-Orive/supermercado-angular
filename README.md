@@ -32,3 +32,9 @@ Voy a crear un proyecto con angular 16
     6.1 Vamos a Angular material y buscamos sort-header
     6.2 Vamos a Angular material a componentes y buscamos form-field
     6.3 Vamos a Angular material y buscamos input
+7. Modulo shared y agregamos botones
+    7.1 Vamos a Angular material a componentes y buscamos icon
+        - Vamos a esta pagina https://developers.google.com/fonts/docs/material_icons?hl=es-419 y pinchamos en biblioteca de iconos de material
+    7.2 Vamos a Angular material y buscamos tooltip
+    7.3 Vamos a Angular material y buscamos button
+    7.4 Creamos un nuevo modulo dentro de la carpeta shared donde pasaremos todos los material angular de app.module.ts que lo podemos hacer asi ng g m shared
