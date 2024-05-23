@@ -72,12 +72,13 @@ export class ListPersonasComponent implements OnInit, AfterViewInit {
     'fechaNacimiento',
     'acciones',
   ];
+  
   dataSource: MatTableDataSource<Persona>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(public dialog: MatDialog) {
-    //this.dataSource = new MatTableDataSource(listPersonas);
-    this.dataSource = new MatTableDataSource();
+    
+    this.dataSource = new MatTableDataSource(listPersonas);
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
